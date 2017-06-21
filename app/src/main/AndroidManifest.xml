@@ -44,6 +44,9 @@
         <activity android:name=".views.activities.SelectStatusActivity" />
         <activity android:name=".views.activities.SelectPhotoActivity" />
         <activity android:name=".views.activities.SubmitAssignmentActivity"/>
+        <activity android:name=".views.ChatActivity"/>
+        <activity android:name=".views.UsersActivity"/>
+
     </application>
 
 </manifest>

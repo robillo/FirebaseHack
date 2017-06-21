@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="top|right"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:id="@+id/textview_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/rounded_corner"
+            android:elevation="3dp"
+            android:maxLength="256"
+            android:maxWidth="250dp"
+            android:padding="16dp"
+            android:text="Android"
+            android:textColor="#000" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:elevation="3dp"
+            android:src="@drawable/arrow_bg1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/man" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview_time"
+        style="@style/chat_timings"
+        android:layout_height="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layout1"
+        android:layout_marginTop="-20dp"
+        android:gravity="right|center_vertical"
+        android:paddingRight="10dp"
+        android:text="11:15 PM" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textview_time"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/textview_time"
+        android:text=""
+        android:textSize="10sp" />
+
+
+</RelativeLayout>

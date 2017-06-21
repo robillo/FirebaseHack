@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/man" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:elevation="3dp"
+            android:src="@drawable/arrow_bg2" />
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:id="@+id/textview_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/rounded_corner1"
+            android:elevation="3dp"
+            android:maxWidth="250dp"
+            android:padding="16dp"
+            android:text="Android"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview_time"
+        style="@style/chat_timings"
+        android:layout_height="15dp"
+        android:layout_below="@+id/layout1"
+        android:layout_marginTop="-20dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:text="11:15 PM" />
+
+
+</RelativeLayout>

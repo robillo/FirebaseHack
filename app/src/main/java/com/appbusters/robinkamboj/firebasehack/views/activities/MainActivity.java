@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appbusters.robinkamboj.firebasehack.R;
+import com.appbusters.robinkamboj.firebasehack.views.ChatActivity;
 import com.appbusters.robinkamboj.firebasehack.views.fragments.CommonFragment;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -74,17 +75,17 @@ public class MainActivity extends AppCompatActivity {
                     showConditional();
                     return true;
                 }
-                case R.id.navigation_follow:{
-                    hideConditional();
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            startActivity(new Intent(MainActivity.this, TeacherListActivity.class));
-                        }
-                    }, 200);
-                    return true;
-                }
+//                case R.id.navigation_follow:{
+//                    hideConditional();
+//                    Handler handler = new Handler();
+//                    handler.postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            startActivity(new Intent(MainActivity.this, TeacherListActivity.class));
+//                        }
+//                    }, 200);
+//                    return true;
+//                }
                 case R.id.navigation_explore:{
                     header.setText(R.string.title_explore);
                     from = getString(R.string.title_explore);
@@ -93,10 +94,11 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 case R.id.navigation_chat:{
-                    header.setText(R.string.chat);
-                    from = getString(R.string.chat);
-                    addFragment(from);
-                    hideConditional();
+//                    header.setText(R.string.chat);
+//                    from = getString(R.string.chat);
+//                    addFragment(from);
+//                    hideConditional();
+                    startActivity(new Intent(MainActivity.this, ChatActivity.class));
                     return true;
                 }
                 case R.id.navigation_profile:{

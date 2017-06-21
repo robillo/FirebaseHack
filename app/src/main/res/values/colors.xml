@@ -8,6 +8,10 @@
     <color name="colorPrimaryDark">#BF360C</color>
     <color name="colorAccent">#424242</color>
 
+    <color name="chat_user_reply_background_color">#c8f0ff</color>
+    <color name="chat_company_reply_background_color">#F5F5F5</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+
     <color name="colorPrimaryLight">#B2EBF2</color>
     <color name="colorBlackShade">#000000</color>
     <color name="colorWhiteShade">#FFFFFF</color>
