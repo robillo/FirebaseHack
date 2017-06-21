@@ -7,4 +7,55 @@
 
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>
+
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#CDDC39</color>
+    <color name="colorPrimaryLight">#B2EBF2</color>
+    <color name="colorBlackShade">#000000</color>
+    <color name="colorWhiteShade">#FFFFFF</color>
+    <color name="colorHighlight">#FF1744</color>
+    <color name="transparentBlue">#741751ff</color>
+    <!-- basic colors -->
+    <color name="green">#27D34D</color>
+    <color name="green_very_dark">#4caf50</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="blue_text">#00BCD4</color>
+    <color name="blue_toggle">#0097A7</color>
+    <color name="blue">#00BCD4</color>
+    <color name="blue_dark">#0097A7</color>
+
+    <color name="orange">#FF9D2F</color>
+    <color name="red">#FF432F</color>
+    <color name="red_dark">#ab110b</color>
+    <color name="pink">#ff40ff</color>
+    <color name="violet">#8A2BE2</color>
+    <color name="yellow">#ffff00</color>
+    <color name="blue_light">#0098f0</color>
+    <color name="blue_very_light">#700098f0</color>
+    <color name="transparent_blue">#bbdefb</color>
+    <color name="transparent">#00000000</color>
+    <color name="very_light_transparent">#10000000</color>
+
+    <array name="rvItemColors">
+        <item>#EF5350</item>
+        <item>#FF5722</item>
+        <item>#689F38</item>
+        <item>#3F51B5</item>
+        <item>#009688</item>
+        <item>#FFCA28</item>
+        <item>#0097A7</item>
+    </array>
+
+    <!-- gray scale -->
+    <color name="gray">#c7c7c7</color>
+    <color name="gray_light">#e4e3e3</color>
+    <color name="gray_dark">#747474</color>
+
+    <color name="default_color">@color/blue_dark</color>
+    <color name="default_color_dark">#52a6b8</color>
+    <color name="color_red">#FF0000</color>
+
 </resources>
