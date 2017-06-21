@@ -1,9 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.appbusters.robinkamboj.firebasehack.views.activities.ProfileActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:gravity="center"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="YOUR PROFILE"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:id="@+id/header"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"/>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAVE"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:id="@+id/save"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="150sp"
+                    android:layout_height="150sp"
+                    app:civ_border_width="2dp"
+                    android:layout_margin="10sp"
+                    android:layout_gravity="center_horizontal"
+                    app:civ_border_color="#000000"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5sp"
+                    app:cardElevation="5sp"
+                    app:cardCornerRadius="10sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:text="NAME"
+                        android:id="@+id/name"
+                        android:textSize="15sp"
+                        android:textColor="#000000"/>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5sp"
+                    app:cardElevation="5sp"
+                    app:cardCornerRadius="10sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:text="GENDER"
+                        android:id="@+id/gender"
+                        android:textSize="15sp"
+                        android:textColor="#000000"/>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5sp"
+                    app:cardElevation="5sp"
+                    app:cardCornerRadius="10sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:text="FACEBOOK ID"
+                        android:id="@+id/id"
+                        android:textSize="15sp"
+                        android:textColor="#000000"/>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5sp"
+                    app:cardElevation="2sp"
+                    app:cardCornerRadius="5sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10sp"
+                            android:text="USER TYPE:"
+                            android:textSize="15sp"
+                            android:textColor="#000000"/>
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/rgusertype">
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="STUDENT"
+                                android:id="@+id/standard"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:textSize="15sp" />
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TEACHER"
+                                android:layout_weight="1"
+                                android:id="@+id/guru"
+                                android:checked="false"
+                                android:textSize="15sp"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5sp"
+                    android:id="@+id/hidenshowcardmain"
+                    android:visibility="gone"
+                    app:cardElevation="5sp"
+                    app:cardCornerRadius="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10sp"
+                            android:text="SUBJECT"
+                            android:textSize="15sp"
+                            android:textColor="#000000"/>
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rg_spec">
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PHYSICS"
+                                android:id="@+id/rbastrology"
+                                android:layout_weight="1"
+                                android:textSize="15sp" />
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CHEMISTRY"
+                                android:layout_weight="1"
+                                android:id="@+id/rbyoga"
+                                android:textSize="15sp"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MATHS"
+                                android:id="@+id/rbpandit"
+                                android:layout_weight="1"
+                                android:textSize="15sp" />
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="C++"
+                                android:layout_weight="1"
+                                android:id="@+id/rbmotivation"
+                                android:textSize="15sp"/>
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/hidenshowcardunwanted"
+                    android:visibility="gone"
+                    android:layout_margin="5sp"
+                    app:cardElevation="5sp"
+                    app:cardCornerRadius="10sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:text="Please Upload Your ID Proof:"
+                        android:textSize="15sp"
+                        android:textColor="#000000"/>
+
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/hidenshowmain">
+
+                    <ImageView
+                        android:layout_width="0sp"
+                        android:layout_weight="1"
+                        android:layout_margin="5sp"
+                        android:id="@+id/govID"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
