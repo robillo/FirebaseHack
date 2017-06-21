@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">FirebaseHack</string>
     <string name="login">Login</string>
+    <string name="facebook_app_id">450657731956289</string>
+    <string name="fb_login_protocol_scheme">fb450657731956289</string>
 </resources>
