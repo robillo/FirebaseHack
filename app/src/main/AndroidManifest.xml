@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.appbusters.robinkamboj.firebasehack">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -41,7 +43,7 @@
         <activity android:name=".views.activities.TeacherListActivity" />
         <activity android:name=".views.activities.SelectStatusActivity" />
         <activity android:name=".views.activities.SelectPhotoActivity" />
-        <activity android:name=".views.activities.SubmitAssignmentActivity"></activity>
+        <activity android:name=".views.activities.SubmitAssignmentActivity"/>
     </application>
 
 </manifest>
