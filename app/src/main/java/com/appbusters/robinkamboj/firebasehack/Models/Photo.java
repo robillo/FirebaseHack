@@ -75,6 +75,16 @@ public class Photo {
         this.language = language;
     }
 
+    public Photo(String type,@NonNull String uid, @NonNull String name, @NonNull Long timestamp, @NonNull String caption, String postUid) {
+        this.uid = uid;
+        this.name = name;
+        this.caption = caption;
+        this.timestamp = timestamp;
+        this.type = type;
+        this.postUid = postUid;
+    }
+
+
     @NonNull
     ArrayList<String> likedUsers;
 

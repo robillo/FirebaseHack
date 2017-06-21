@@ -51,6 +51,15 @@ public class Status {
         this.likes = likes;
     }
 
+    public Status(String type,@NonNull String uid, @NonNull String name, @NonNull Long timestamp, @NonNull String status, String postUid) {
+        this.uid = uid;
+        this.name = name;
+        this.status = status;
+        this.timestamp = timestamp;
+        this.type = type;
+        this.postUid = postUid;
+    }
+
     @NonNull
     public Integer getShares() {
         return shares;

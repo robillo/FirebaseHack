@@ -8,7 +8,7 @@ public class Student {
     private String phone;
     private String college;
     private String batch;
-    private String studentUid;
+    private String uid;
     private String fbId;
 
     public Integer getAge() {
@@ -38,12 +38,12 @@ public class Student {
         this.fbId = fbId;
     }
 
-    public String getStudentUid() {
-        return studentUid;
+    public String getUid() {
+        return uid;
     }
 
-    public void setStudentUid(String studentUid) {
-        this.studentUid = studentUid;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getName() {
