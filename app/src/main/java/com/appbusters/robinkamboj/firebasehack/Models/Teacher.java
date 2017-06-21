@@ -12,7 +12,7 @@ public class Teacher {
     private String phone;
     private String college;
     private String subject;
-    private String teacherUid;
+    private String uid;
     private String fbId;
 
     public String getSubject() {
@@ -23,12 +23,12 @@ public class Teacher {
         this.subject = subject;
     }
 
-    public String getTeacherUid() {
-        return teacherUid;
+    public String getUid() {
+        return uid;
     }
 
-    public void setTeacherUid(String teacherUid) {
-        this.teacherUid = teacherUid;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getName() {
