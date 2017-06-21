@@ -1,7 +1,9 @@
-package com.appbusters.robinkamboj.firebasehack;
+package com.appbusters.robinkamboj.firebasehack.views.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.appbusters.robinkamboj.firebasehack.R;
 
 public class ProfileActivity extends AppCompatActivity {
 

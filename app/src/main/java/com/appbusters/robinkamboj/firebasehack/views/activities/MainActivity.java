@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.firebasehack;
+package com.appbusters.robinkamboj.firebasehack.views.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.appbusters.robinkamboj.firebasehack.R;
 import com.appbusters.robinkamboj.firebasehack.views.fragments.CommonFragment;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
