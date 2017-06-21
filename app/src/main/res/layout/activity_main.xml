@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:background="@color/white"
+    tools:context="com.robillo.sasuke.dailysuvichar.activity.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <ImageView
+        android:id="@+id/iv_logo"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="8sp"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        android:layout_marginBottom="4sp">
+        android:layout_height="150dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo_name_one" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/login"/>
-
-    </android.support.v7.widget.Toolbar>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/iv_logo"
         android:orientation="vertical"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:gravity="center">
 
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/fb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30sp" />
 
     </LinearLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
