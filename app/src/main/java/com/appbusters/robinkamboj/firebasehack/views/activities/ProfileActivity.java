@@ -83,6 +83,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         code = getIntent().getIntExtra("fromHome", 0);
 
@@ -337,6 +338,13 @@ public class ProfileActivity extends AppCompatActivity {
             mUsersDatabase.child(mFirebaseUser.getUid()).child("uid").setValue(mFirebaseUser.getUid());
             AppPreferencesHelper.setIsProfileSet("TRUE");
             AppPreferencesHelper.setUserType("TEACHER");
+
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_ID, pushID);
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, pushName);
+            bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, pushGender);
+            mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
             startActivity(new Intent(this, MainActivity.class));
             Toast.makeText(getApplicationContext(), "Profile Successfully Updated.", Toast.LENGTH_SHORT).show();
         }

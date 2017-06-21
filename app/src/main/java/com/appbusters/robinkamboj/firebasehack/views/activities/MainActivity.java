@@ -137,9 +137,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setIcon(R.drawable.database);
-
 
         from = getString(R.string.title_home);
         addFragment(getResources().getString(R.string.title_home));
