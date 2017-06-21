@@ -3,4 +3,14 @@
     <string name="login">Login</string>
     <string name="facebook_app_id">450657731956289</string>
     <string name="fb_login_protocol_scheme">fb450657731956289</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_follow">Dashboard</string>
+    <string name="title_explore">Notifications</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+    <string name="click_back">Click \"BACK\" again to exit app.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
