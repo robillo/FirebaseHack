@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.firebasehack;
+package com.appbusters.robinkamboj.firebasehack.views.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.appbusters.robinkamboj.firebasehack.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;

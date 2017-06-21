@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:gravity="center"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/title_home"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:id="@+id/header"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"/>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="90sp"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:id="@+id/fragment_container_new_main">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="50sp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal"
+            android:id="@+id/conditional">
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:text="Share Status"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"
+                android:layout_weight="1"
+                android:id="@+id/status_select"/>
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:text="Share Photo"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"
+                android:layout_weight="1"
+                android:id="@+id/photos_select"/>
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:text="Share Video"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"
+                android:layout_weight="1"
+                android:id="@+id/videos_select"/>
+
+        </LinearLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/navigation" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
