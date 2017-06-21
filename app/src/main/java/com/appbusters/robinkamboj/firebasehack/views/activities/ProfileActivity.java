@@ -314,4 +314,32 @@ public class ProfileActivity extends AppCompatActivity {
             hidenshowCardUnwanted.setVisibility(View.GONE);
         }
     }
+
+    @OnClick(R.id.save)
+    public void save(){
+        if (pushUserType.equals("STUDENT")){
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("name").setValue(pushName);
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("id").setValue(pushID);
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("gender").setValue(pushGender);
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("userType").setValue(pushUserType);
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("uid").setValue(mFirebaseUser.getUid());
+            AppPreferencesHelper.setIsProfileSet("TRUE");
+            AppPreferencesHelper.setUserType("TEACHER");
+            startActivity(new Intent(this, MainActivity.class));
+            Toast.makeText(getApplicationContext(), "Profile Successfully Updated.", Toast.LENGTH_SHORT).show();
+        }
+        else if (pushUserType.equals("TEACHER")){
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("name").setValue(pushName);
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("id").setValue(pushID);
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("gender").setValue(pushGender);
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("userType").setValue(pushUserType);
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("govID").setValue(govPath.toString());
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("specID").setValue(specPath.toString());
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("uid").setValue(mFirebaseUser.getUid());
+            AppPreferencesHelper.setIsProfileSet("TRUE");
+            AppPreferencesHelper.setUserType("TEACHER");
+            startActivity(new Intent(this, MainActivity.class));
+            Toast.makeText(getApplicationContext(), "Profile Successfully Updated.", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
