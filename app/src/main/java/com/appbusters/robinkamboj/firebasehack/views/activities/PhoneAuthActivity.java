@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.firebasehack;
+package com.appbusters.robinkamboj.firebasehack.views.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.appbusters.robinkamboj.firebasehack.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;

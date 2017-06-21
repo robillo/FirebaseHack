@@ -6,27 +6,14 @@ package com.appbusters.robinkamboj.firebasehack.Models;
 
 public class Teacher {
     private String name;
-    private String email;
-    private String bio;
     private String photoUrl;
-    private String DOB;
+    private Integer age;
     private String gender;
     private String phone;
     private String college;
     private String subject;
     private String teacherUid;
-
-    public Teacher(String name, String email, String bio, String photoUrl, String DOB, String gender, String phone, String college, String subject) {
-        this.name = name;
-        this.email = email;
-        this.bio = bio;
-        this.photoUrl = photoUrl;
-        this.DOB = DOB;
-        this.gender = gender;
-        this.phone = phone;
-        this.college = college;
-        this.subject = subject;
-    }
+    private String fbId;
 
     public String getSubject() {
         return subject;
@@ -52,20 +39,32 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public Teacher(String name, String photoUrl, Integer age, String gender, String phone, String college, String subject, String fbId) {
+        this.name = name;
+        this.photoUrl = photoUrl;
+        this.age = age;
+        this.gender = gender;
+        this.phone = phone;
+        this.college = college;
+        this.subject = subject;
+        this.fbId = fbId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Integer getAge() {
+
+        return age;
     }
 
-    public String getBio() {
-        return bio;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public String getFbId() {
+        return fbId;
+    }
+
+    public void setFbId(String fbId) {
+        this.fbId = fbId;
     }
 
     public String getPhotoUrl() {
@@ -76,13 +75,6 @@ public class Teacher {
         this.photoUrl = photoUrl;
     }
 
-    public String getDOB() {
-        return DOB;
-    }
-
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
-    }
 
     public String getGender() {
         return gender;

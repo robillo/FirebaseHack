@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".PhoneAuthActivity">
+        <activity android:name=".views.activities.PhoneAuthActivity">
         </activity>>
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

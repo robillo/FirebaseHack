@@ -2,15 +2,41 @@ package com.appbusters.robinkamboj.firebasehack.Models;
 
 public class Student {
     private String name;
-    private String email;
-    private String bio;
     private String photoUrl;
-    private String DOB;
+    private Integer age;
     private String gender;
     private String phone;
     private String college;
     private String batch;
     private String studentUid;
+    private String fbId;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getFbId() {
+        return fbId;
+    }
+
+    public void setFbId(String fbId) {
+        this.fbId = fbId;
+    }
+
+    public Student(String name, String photoUrl, Integer age, String gender, String phone, String college, String batch, String fbId) {
+        this.name = name;
+        this.photoUrl = photoUrl;
+        this.age = age;
+        this.gender = gender;
+        this.phone = phone;
+        this.college = college;
+        this.batch = batch;
+        this.fbId = fbId;
+    }
 
     public String getStudentUid() {
         return studentUid;
@@ -28,36 +54,12 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
     public String getPhotoUrl() {
         return photoUrl;
     }
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
-    }
-
-    public String getDOB() {
-        return DOB;
-    }
-
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
     }
 
     public String getGender() {
@@ -89,18 +91,6 @@ public class Student {
     }
 
     public void setBatch(String batch) {
-        this.batch = batch;
-    }
-
-    public Student(String name, String email, String bio, String photoUrl, String DOB, String gender, String phone, String college, String batch) {
-        this.name = name;
-        this.email = email;
-        this.bio = bio;
-        this.photoUrl = photoUrl;
-        this.DOB = DOB;
-        this.gender = gender;
-        this.phone = phone;
-        this.college = college;
         this.batch = batch;
     }
 
