@@ -7,10 +7,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.appbusters.robinkamboj.firebasehack.R;
+import com.appbusters.robinkamboj.firebasehack.Utils.AppPreferencesHelper;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -28,6 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.login_button)
     LoginButton loginButton;
+    @BindView(R.id.phone_auth)
+    TextView phone;
 
     Context context;
     CallbackManager callbackManager;
@@ -50,6 +55,14 @@ public class LoginActivity extends AppCompatActivity {
         context = getApplicationContext();
         mFirebaseAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
+
+        if(AppPreferencesHelper.getIsProfileSet()!=null){
+            startActivity(new Intent(this, MainActivity.class));
+        }
+        else if(AppPreferencesHelper.getIsLoggedIn()!=null){
+            startActivity(new Intent(this, ProfileActivity.class));
+        }
+
 
 //        setupDialog();
         loginButton.setReadPermissions("email");
@@ -100,11 +113,18 @@ public class LoginActivity extends AppCompatActivity {
                             Intent i = new Intent(context.getApplicationContext(), ProfileActivity.class);
                             i.putExtra("fromLogin", 0);
 //                            dismissDialog();
+
+                            AppPreferencesHelper.setIsLoggedIn("TRUE");
                             startActivity(i);
                             Toast.makeText(context.getApplicationContext(), "auth success", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    @OnClick(R.id.phone_auth)
+    public void startPhoneAuth(){
+        startActivity(new Intent(this, PhoneAuthActivity.class));
     }
 
 //    public void setupDialog() {

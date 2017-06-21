@@ -36,102 +36,106 @@ public class AppPreferencesHelper {
     private static final String PREF_KEY_FCM_TOKEN = "PREF_KEY_FCM_TOKEN";
     private static final String PREF_KEY_CURRENT_USER_LOGIN_TYPE ="PREF_KEY_CURRENT_USER_LOGIN_TYPE";
 
-
-    private static final String USER_TYPE = "STANDARD";
+    private static final String USER_TYPE = "STUDENT_OR_TEACHER";
     private static final String IS_LOGGED_IN = "true_or_false_login";
     private static final String IS_PROFILE_SET = "true_or_false_profile";
     private static final String IS_INTERESTS_SELECTED = "true_or_false_interest";
     private static final String IS_SUBINTERESTS_SELECTED = "true_or_false_subinterest";
 
-
-    private static SharedPreferences mPrefs;
-    private static AppPreferencesHelper instance;
-
-    public static AppPreferencesHelper getInstance() {
-        if (instance == null) {
-            instance = new AppPreferencesHelper(getApplicationContext(),PREF_FILE_NAME);
-        }
-        return instance;
+    private static SharedPreferences getPreferences() {
+        Context context = getApplicationContext();
+        return context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
     }
 
-    public AppPreferencesHelper(Context context, String prefFileName) {
-        mPrefs = context.getSharedPreferences(prefFileName, Context.MODE_PRIVATE);
+    public static void setIsLoggedIn(String token){
+        SharedPreferences.Editor editor = getPreferences().edit();
+        editor.putString(IS_LOGGED_IN, token);
+        editor.apply();
+    }
+
+    public static void setIsProfileSet(String token){
+        SharedPreferences.Editor editor = getPreferences().edit();
+        editor.putString(IS_PROFILE_SET, token);
+        editor.apply();
+    }
+
+    public static String getIsLoggedIn() {
+        return getPreferences().getString(IS_LOGGED_IN, null);
+    }
+
+    public static String getIsProfileSet() {
+        return getPreferences().getString(IS_PROFILE_SET, null);
     }
 
     public boolean getLoggedInStatus() {
-        return mPrefs.getBoolean(PREF_KEY_LOGGED_IN_STATUS, false);
+        return getPreferences().getBoolean(PREF_KEY_LOGGED_IN_STATUS, false);
     }
 
     public void setLoggedInStatus(boolean status) {
-        mPrefs.edit().putBoolean(PREF_KEY_LOGGED_IN_STATUS, status).apply();
+        getPreferences().edit().putBoolean(PREF_KEY_LOGGED_IN_STATUS, status).apply();
     }
 
     public String getCurrentUserName() {
-        return mPrefs.getString(PREF_KEY_CURRENT_USER_NAME, null);
+        return getPreferences().getString(PREF_KEY_CURRENT_USER_NAME, null);
     }
 
     public void setCurrentUserName(String userName) {
-        mPrefs.edit().putString(PREF_KEY_CURRENT_USER_NAME, userName).apply();
+        getPreferences().edit().putString(PREF_KEY_CURRENT_USER_NAME, userName).apply();
     }
 
     public String getCurrentUserId() {
-        return mPrefs.getString(PREF_KEY_CURRENT_USER_ID, null);
+        return getPreferences().getString(PREF_KEY_CURRENT_USER_ID, null);
     }
 
     public void setCurrentUserId(String userId) {
-        mPrefs.edit().putString(PREF_KEY_CURRENT_USER_ID, userId).apply();
+        getPreferences().edit().putString(PREF_KEY_CURRENT_USER_ID, userId).apply();
     }
 
     public String getCurrentUserEmail() {
-        return mPrefs.getString(PREF_KEY_CURRENT_USER_EMAIL, null);
+        return getPreferences().getString(PREF_KEY_CURRENT_USER_EMAIL, null);
     }
 
     public void setCurrentUserEmail(String email) {
-        mPrefs.edit().putString(PREF_KEY_CURRENT_USER_EMAIL, email).apply();
+        getPreferences().edit().putString(PREF_KEY_CURRENT_USER_EMAIL, email).apply();
     }
 
     public String getCurrentUserProfilePicUrl() {
-        return mPrefs.getString(PREF_KEY_CURRENT_USER_PROFILE_PIC_URL, null);
+        return getPreferences().getString(PREF_KEY_CURRENT_USER_PROFILE_PIC_URL, null);
     }
 
     public void setCurrentUserProfilePicUrl(String profilePicUrl) {
-        mPrefs.edit().putString(PREF_KEY_CURRENT_USER_PROFILE_PIC_URL, profilePicUrl).apply();
+        getPreferences().edit().putString(PREF_KEY_CURRENT_USER_PROFILE_PIC_URL, profilePicUrl).apply();
     }
 
     public String getAccessToken() {
-        return mPrefs.getString(PREF_KEY_ACCESS_TOKEN, null);
+        return getPreferences().getString(PREF_KEY_ACCESS_TOKEN, null);
     }
 
     public void setAccessToken(String accessToken) {
-        mPrefs.edit().putString(PREF_KEY_ACCESS_TOKEN, accessToken).apply();
+        getPreferences().edit().putString(PREF_KEY_ACCESS_TOKEN, accessToken).apply();
     }
 
     public String getFcmToken() {
-        return mPrefs.getString(PREF_KEY_FCM_TOKEN, null);
+        return getPreferences().getString(PREF_KEY_FCM_TOKEN, null);
     }
 
     public void setFcmToken(String accessToken) {
-        mPrefs.edit().putString(PREF_KEY_FCM_TOKEN, accessToken).apply();
+        getPreferences().edit().putString(PREF_KEY_FCM_TOKEN, accessToken).apply();
     }
     public String getCurrentUserLoginType() {
-        return mPrefs.getString(PREF_KEY_CURRENT_USER_LOGIN_TYPE, null);
+        return getPreferences().getString(PREF_KEY_CURRENT_USER_LOGIN_TYPE, null);
     }
 
     public void setCurrentUserLoginType(String loginType) {
-        mPrefs.edit().putString(PREF_KEY_CURRENT_USER_LOGIN_TYPE, loginType).apply();
+        getPreferences().edit().putString(PREF_KEY_CURRENT_USER_LOGIN_TYPE, loginType).apply();
     }
-
-    public SharedPreferences getmPrefs() {
-        return mPrefs;
-    }
-
 
     public static String getUserType() {
-        return mPrefs.getString(USER_TYPE, null);
+        return getPreferences().getString(USER_TYPE, null);
     }
 
     public static void setUserType(String userType){
-        SharedPreferences.Editor editor = mPrefs.edit();
+        SharedPreferences.Editor editor = getPreferences().edit();
         editor.putString(USER_TYPE, userType);
         editor.apply();
     }
