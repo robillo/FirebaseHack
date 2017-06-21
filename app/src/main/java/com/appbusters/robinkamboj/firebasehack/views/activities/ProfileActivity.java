@@ -15,6 +15,7 @@ import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -68,7 +69,11 @@ public class ProfileActivity extends AppCompatActivity {
     Uri govPath = null, specPath = null;
     private int code = 0;
     private String pushGender = null, pushID = null, pushName = null, pushUserType =null, pushSpec = null;
-    
+
+    @BindView(R.id.phone)
+    EditText ephone;
+    @BindView(R.id.college)
+    EditText ecollege;
     @BindView(R.id.govID)
     ImageView govID;
     
@@ -322,6 +327,8 @@ public class ProfileActivity extends AppCompatActivity {
             mUsersDatabase.child(mFirebaseUser.getUid()).child("id").setValue(pushID);
             mUsersDatabase.child(mFirebaseUser.getUid()).child("gender").setValue(pushGender);
             mUsersDatabase.child(mFirebaseUser.getUid()).child("userType").setValue(pushUserType);
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("phone").setValue(ephone.getText().toString());
+            mUsersDatabase.child(mFirebaseUser.getUid()).child("college").setValue(ecollege.getText().toString());
             mUsersDatabase.child(mFirebaseUser.getUid()).child("uid").setValue(mFirebaseUser.getUid());
             AppPreferencesHelper.setIsProfileSet("TRUE");
             AppPreferencesHelper.setUserType("TEACHER");
@@ -330,11 +337,12 @@ public class ProfileActivity extends AppCompatActivity {
         }
         else if (pushUserType.equals("TEACHER")){
             mGurusDatabase.child(mFirebaseUser.getUid()).child("name").setValue(pushName);
-            mGurusDatabase.child(mFirebaseUser.getUid()).child("id").setValue(pushID);
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("fbId").setValue(pushID);
             mGurusDatabase.child(mFirebaseUser.getUid()).child("gender").setValue(pushGender);
-            mGurusDatabase.child(mFirebaseUser.getUid()).child("userType").setValue(pushUserType);
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("phone").setValue(ephone.getText().toString());
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("college").setValue(ecollege.getText().toString());
+            mGurusDatabase.child(mFirebaseUser.getUid()).child("subject").setValue(pushSpec);
             mGurusDatabase.child(mFirebaseUser.getUid()).child("govID").setValue(govPath.toString());
-            mGurusDatabase.child(mFirebaseUser.getUid()).child("specID").setValue(specPath.toString());
             mGurusDatabase.child(mFirebaseUser.getUid()).child("uid").setValue(mFirebaseUser.getUid());
             AppPreferencesHelper.setIsProfileSet("TRUE");
             AppPreferencesHelper.setUserType("TEACHER");
