@@ -326,7 +326,6 @@ public class ProfileActivity extends AppCompatActivity {
             mUsersDatabase.child(mFirebaseUser.getUid()).child("name").setValue(pushName);
             mUsersDatabase.child(mFirebaseUser.getUid()).child("id").setValue(pushID);
             mUsersDatabase.child(mFirebaseUser.getUid()).child("gender").setValue(pushGender);
-            mUsersDatabase.child(mFirebaseUser.getUid()).child("userType").setValue(pushUserType);
             mUsersDatabase.child(mFirebaseUser.getUid()).child("phone").setValue(ephone.getText().toString());
             mUsersDatabase.child(mFirebaseUser.getUid()).child("college").setValue(ecollege.getText().toString());
             mUsersDatabase.child(mFirebaseUser.getUid()).child("uid").setValue(mFirebaseUser.getUid());
