@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     header.setText(R.string.chat);
                     from = getString(R.string.chat);
                     addFragment(from);
-                    showConditional();
+                    hideConditional();
                     return true;
                 }
                 case R.id.navigation_profile:{
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setIcon(R.drawable.database);
 
 
         from = getString(R.string.title_home);

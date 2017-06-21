@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -302,6 +303,11 @@ public class ProfileActivity extends AppCompatActivity {
         hidenshowCardUnwanted.setClickable(false);
         hidenshowMain.setClickable(false);
         (findViewById(R.id.save)).setVisibility(View.GONE);
+        ephone.setText("7042337414");
+        ecollege.setText("MAIT");
+        ephone.setEnabled(false);
+        ecollege.setEnabled(false);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
     public void showGuruStuff(){
