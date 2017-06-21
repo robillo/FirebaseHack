@@ -2,8 +2,8 @@ package com.appbusters.robinkamboj.firebasehack.views.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.appbusters.robinkamboj.firebasehack.R;
@@ -15,12 +15,11 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @BindView(R.id.login_button)
+//    @BindView(R.id.login_button)
     LoginButton loginButton;
 
     Context context;
