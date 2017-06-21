@@ -35,6 +35,15 @@ public class AppPreferencesHelper {
     private static final String PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN";
     private static final String PREF_KEY_FCM_TOKEN = "PREF_KEY_FCM_TOKEN";
     private static final String PREF_KEY_CURRENT_USER_LOGIN_TYPE ="PREF_KEY_CURRENT_USER_LOGIN_TYPE";
+
+
+    private static final String USER_TYPE = "STANDARD";
+    private static final String IS_LOGGED_IN = "true_or_false_login";
+    private static final String IS_PROFILE_SET = "true_or_false_profile";
+    private static final String IS_INTERESTS_SELECTED = "true_or_false_interest";
+    private static final String IS_SUBINTERESTS_SELECTED = "true_or_false_subinterest";
+
+
     private static SharedPreferences mPrefs;
     private static AppPreferencesHelper instance;
 
@@ -114,5 +123,16 @@ public class AppPreferencesHelper {
 
     public SharedPreferences getmPrefs() {
         return mPrefs;
+    }
+
+
+    public static String getUserType() {
+        return mPrefs.getString(USER_TYPE, null);
+    }
+
+    public static void setUserType(String userType){
+        SharedPreferences.Editor editor = mPrefs.edit();
+        editor.putString(USER_TYPE, userType);
+        editor.apply();
     }
 }
